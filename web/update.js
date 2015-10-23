@@ -1,38 +1,18 @@
-var app = angular.module("app", []);
-
-function getParameterByName(name) {
-    var regexS = "[\\?&]" + name + "=([^&#]*)",
-            regex = new RegExp(regexS),
-            results = regex.exec(window.location.search);
-    if (results == null) {
-        return "";
-    } else {
-        return decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
-}
-
-entidadBancaria = {
-    idEntidadBancaria: getParameterByName("idEntidadBancaria"),
-    nombre: getParameterByName("nombre"),
-    codigoEntidad: getParameterByName("codigoEntidad"),
-    fechaCreacion: getParameterByName("fechaCreacion"),
-    direccion: getParameterByName("direccion"),
-    cif: getParameterByName("cif")
-}
-updateController.Sinject=['$scope','$http'];
-function updateController($scope, $http) {
-
-
+app.controller("updateController", updateController);
+updateController.Sinject=['$scope','$http','$routeParams'];
+function updateController($scope, $http, $routeParams) {
+$scope.actualizar = function () {
     $http({
         method: 'PUT',
-        url: '../Banco.api/api/entidadbancaria/'+getParameterByName("idEntidadBancaria"),
-        data: entidadBancaria
+        url: '../Banco.api/api/entidadbancaria/'+$routeParams.idEntidadBancaria,
+        data: $scope.entidadBancaria
 
     }).success(function (data, status, headers, config) {
+          alert( $scope.entidadBancaria.nombre);
         alert("Actualizado Correctamente");
     }).error(function (data, status, headers, config) {
         alert("Ha fallado la petición. Estado HTTP:" + status);
         console.log(data);
     });
+    }
 }
-app.controller("updateController", updateController);

@@ -24,13 +24,13 @@ app.config(['$routeProvider', function ($routeProvider){
     
     
   $routeProvider.when('/get/:idEntidadBancaria', {
-  templateUrl: "getangular.html",
+  templateUrl: "get.html",
   controller: "getController"
 });
     
   
   $routeProvider.when('/insert/', {
-  templateUrl: "formularioinsert.html",
+  templateUrl: "insert.html",
   controller: "insertController"
 });   
 

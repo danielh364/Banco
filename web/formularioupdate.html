@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>update</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>actualizar datos</h1>
-    <form action="update.html">
-        <p>Id Entidad Bancaria: <input type="text" name="idEntidadBancaria"/> (ID de la entidad a modificar)</p> 
-            <p>nombre: <input type="text" name="nombre"/></p> 
-            <p>Codigo Entidad: <input type="text" name="codigoEntidad"/></p>
-            <p>Fecha de creacion: <input type="text" name="fechaCreacion"/></p>
-            <p>Direccion: <input type="text" name="direccion"/></p>
-            <p>CIF: <input type="text" name="cif"/></p>
-            <input type="submit" value="Insertar"/><input type="reset"/><br><br>
-            </form>
-    </body>
-</html>
+<h1>actualizar datos</h1>
+<form ng-controller="updateController">
+    <p>nombre: <input type="text" name="nombre" ng-model="entidadBancaria.nombre"/></p> 
+    <p>Codigo Entidad: <input type="text" name="codigoEntidad" ng-model="entidadBancaria.codigoEntidad"/></p>
+    <p>Fecha de creacion: <input type="text" name="fechaCreacion" ng-model="entidadBancaria.fechaCreacion"/></p>
+    <p>Direccion: <input type="text" name="direccion" ng-model="entidadBancaria.direccion"/></p>
+    <p>CIF: <input type="text" name="cif" ng-model="entidadBancaria.cif"/></p>
+    <input ng-click="actualizar()" type="submit" value="Insertar"/><input type="reset"/><br><br>
+</form>

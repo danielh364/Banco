@@ -1,5 +1,5 @@
 app.controller("deleteController", deleteController);
-IndexController.Sinject=['$scope','$http','$routeParams'];
+deleteController.Sinject=['$scope','$http','$routeParams'];
 function deleteController($scope, $http, $routeParams) {
    
     var config = {
