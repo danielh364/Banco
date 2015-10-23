@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html ng-app="app">
-    <head>
-        <title>Delete</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="lib/angular/js/angular.js" type="text/javascript"></script>
-        <script src="lib/angular/js/angular-locale_es-es.js" type="text/javascript"></script>
-        <script src="delete.js" type="text/javascript"></script>
-    </head>
-    <body ng-controller="deleteController">      
-    </body>
-</html>
 
+
+<div ng-controller="deleteController">
+    <h1 ng-model="identidadBancaria" ng-click="borrar()">Deseas realmente borrar la identidadBancaria {{identidadBancaria}}</h1>
+    <button ng-click="borrar()">Si</button>
+<button ng-click="noBorrar()">No</button>
+</div>
