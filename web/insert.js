@@ -2,15 +2,14 @@ app.controller("insertController", insertController);
 
 insertController.Sinject = ['$scope', '$http'];
 function insertController($scope, $http) {
-  
-    
+
+
     $scope.insertar = function () {
-        
+
 //        No me funciona si la declaro.
 //        $scope.entidadBancaria = {
 //        };
-        
-    
+
         $http({
             method: 'POST',
             url: '../Banco.api/api/entidadbancaria/',

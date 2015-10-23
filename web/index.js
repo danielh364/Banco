@@ -41,7 +41,7 @@ app.config(['$routeProvider', function ($routeProvider){
     
 
  $routeProvider.when('/update/:idEntidadBancaria', {
-  templateUrl: "formularioupdate.html",
+  templateUrl: "update.html",
   controller: "updateController"
 });   
 
