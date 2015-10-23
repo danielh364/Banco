@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="app">
+    <head>
+        <title>GET</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="lib/angular/js/angular.js" type="text/javascript"></script>
+        <script src="lib/angular/js/angular-locale_es-es.js" type="text/javascript"></script>
+        <script src="get.js" type="text/javascript"></script>
+    </head>
+    <body ng-controller="getController">      
+        <h1>GET Angular</h1>
+        <table border="1">
+            <tr>
+                <td>identidadBancaria</td>
+                <td>nombre</td>
+                <td>direccion</td>
+                <td>cif</td>
+                <td>fecha Creacion</td>
+                <td>Codigo Entidad</td>
+            </tr>
+            <tr>
+            <td>{{entidadBancaria.idEntidadBancaria}}</td>
+            <td>{{entidadBancaria.nombre}}</td>
+            <td>{{entidadBancaria.direccion}}</td>
+            <td>{{entidadBancaria.cif}}</td>
+            <td>{{entidadBancaria.fechaCreacion}}</td>
+            <td>{{entidadBancaria.codigoEntidad}}</td>
+            
+            </tr>
+        </table>
+    </body>
+</html>
+

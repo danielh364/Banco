@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="app">
+    <head>
+        <title>FindALL, GET, Delete Angular</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="lib/angular/js/angular.js" type="text/javascript"></script>
+        <script src="lib/angular/js/angular-locale_es-es.js" type="text/javascript"></script>
+        <script src="lib/angular/js/angular-route.js" type="text/javascript"></script>
+        <script src="index.js" type="text/javascript"></script>
+        <script src="get.js" type="text/javascript"></script>
+        <script src="delete.js" type="text/javascript"></script>
+        <script src="insert.js" type="text/javascript"></script>
+
+    </head>
+    <body ng-controller="IndexController">
+        <table border="1">
+            <tr>
+                <td>identidadBancaria</td>
+                <td>nombre</td>
+                <td>Borrar</td>
+                <td>Actualizar</td>
+            </tr>
+            <tr ng-repeat="entidadBancaria in entidadesBancarias">
+             <td> <a href="#/get/{{entidadBancaria.idEntidadBancaria}}" > {{entidadBancaria.idEntidadBancaria}} </a></td>
+            <td>{{entidadBancaria.nombre}}</td>
+            <td><a href="#/delete/{{entidadBancaria.idEntidadBancaria}}" >  <button>Borrar </button></a></td>
+            <td><a href="#/update/{{entidadBancaria.idEntidadBancaria}}" > <button>Actutalizar</button></a></td>
+            </tr>
+        </table>
+        <a href="#/insert/" > <button>Insertar</button></a>
+
+        <div ng-view> </div>
+    </body>
+</html>
