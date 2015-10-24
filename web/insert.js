@@ -3,11 +3,9 @@ app.controller("insertController", insertController);
 insertController.Sinject = ['$scope', '$http'];
 function insertController($scope, $http) {
 
+    $scope.entidadBancaria = {};
 
     $scope.insertar = function () {
-//        No me funciona 
-//        $scope.entidadBancaria = {
-//        };
 
         $http({
             method: 'POST',

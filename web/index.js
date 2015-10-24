@@ -1,50 +1,41 @@
 var app = angular.module("app", ['ngRoute']);
 
+app.config(['$routeProvider', function ($routeProvider) {
 
-app.controller("IndexController", IndexController);
-IndexController.Sinject=['$scope','$http'];
-function IndexController($scope, $http) {
-    $scope.mensaje = "hola mundo";
-   
+        $routeProvider.when('/find/', {
+            templateUrl: "find.html",
+            controller: "findController"
+        });
 
-    var config = {
-        method: "GET",
-        url: "../Banco.api/api/entidadbancaria"
-    }
+        $routeProvider.when('/find/:nombre', {
+            templateUrl: "find.html",
+            controller: "findController"
+        });
 
-    var response = $http(config);
-    response.success(function (data, status, headers, config) {
-        $scope.entidadesBancarias = data;
-    });
-
-
-}
-
-app.config(['$routeProvider', function ($routeProvider){
-    
-    
-  $routeProvider.when('/get/:idEntidadBancaria', {
-  templateUrl: "get.html",
-  controller: "getController"
-});
-    
-  
-  $routeProvider.when('/insert/', {
-  templateUrl: "insert.html",
-  controller: "insertController"
-});   
-
- $routeProvider.when('/delete/:idEntidadBancaria', {
-  templateUrl: "delete.html",
-  controller: "deleteController"
-});
-    
-
- $routeProvider.when('/update/:idEntidadBancaria', {
-  templateUrl: "update.html",
-  controller: "updateController"
-});   
+        $routeProvider.when('/get/:idEntidadBancaria', {
+            templateUrl: "get.html",
+            controller: "getController"
+        });
 
 
-    
-}]);
+        $routeProvider.when('/insert/', {
+            templateUrl: "insert.html",
+            controller: "insertController"
+        });
+
+        $routeProvider.when('/delete/:idEntidadBancaria', {
+            templateUrl: "delete.html",
+            controller: "deleteController"
+        });
+
+
+        $routeProvider.when('/update/:idEntidadBancaria', {
+            templateUrl: "update.html",
+            controller: "updateController"
+        });
+
+        $routeProvider.otherwise({
+            redirectTo: '/find/'
+        });
+
+    }]);
