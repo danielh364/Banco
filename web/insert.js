@@ -5,8 +5,7 @@ function insertController($scope, $http) {
 
 
     $scope.insertar = function () {
-
-//        No me funciona si la declaro.
+//        No me funciona 
 //        $scope.entidadBancaria = {
 //        };
 

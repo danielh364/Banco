@@ -18,15 +18,15 @@ and open the template in the editor.
         <h1>{{mensaje}}</h1>
         <br>
         mensaje:<input type="text" ng-model="mensaje">
-        
-        <table ng-hide="mensaje==='pepe'">
+
+        <table ng-hide="mensaje === 'pepe'">
             <tr>
                 <td>identidadBancaria</td>
                 <td>nombre</td>
             </tr>
             <tr ng-repeat="entidadBancaria in entidadesBancarias">
-            <td>{{entidadBancaria.idEntidadBancaria}}</td>
-            <td>{{entidadBancaria.nombre}}</td>
+                <td>{{entidadBancaria.idEntidadBancaria}}</td>
+                <td>{{entidadBancaria.nombre}}</td>
             </tr>
         </table>
     </body>
