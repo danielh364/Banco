@@ -1,7 +1,5 @@
-app.controller("insertController", insertController);
-
-insertController.Sinject = ['$scope', 'entidadBancariaService'];
-function insertController($scope, entidadBancariaService) {
+InsertController.$inject = ['$scope', 'entidadBancariaService'];
+function InsertController($scope, entidadBancariaService) {
 
     $scope.entidadBancaria = {};
 
@@ -19,3 +17,4 @@ function insertController($scope, entidadBancariaService) {
         });
     }
 }
+app.controller("InsertController", InsertController);

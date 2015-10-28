@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html ng-app="app">
+<html ng-app="app" ng-strict-di>
     <head>
         <title>FindALL, GET, Delete Angular</title>
         <meta charset="UTF-8">
@@ -24,7 +24,6 @@ and open the template in the editor.
     <body>
         <div id="contenedorPrincipal">
             <h1>Entidades Bancarias</h1>
-            <a href="#/find/" > <button>Ver todas las Entidades Bancarias</button></a>
             <br></br>
             Nombre de la entidad: <input type="text" name="nombre" ng-model="nombre"/> 
             <a href="#/find/{{nombre}}" > <button>Buscar Entidades</button></a>

@@ -4,34 +4,34 @@ app.config(['$routeProvider', function ($routeProvider) {
 
         $routeProvider.when('/find/', {
             templateUrl: "find.html",
-            controller: "findController"
+            controller: "FindController"
         });
 
         $routeProvider.when('/find/:nombre', {
             templateUrl: "find.html",
-            controller: "findController"
+            controller: "FindController"
         });
 
         $routeProvider.when('/get/:idEntidadBancaria', {
             templateUrl: "get.html",
-            controller: "getController"
+            controller: "GetController"
         });
 
 
         $routeProvider.when('/insert/', {
             templateUrl: "insert.html",
-            controller: "insertController"
+            controller: "InsertController"
         });
 
         $routeProvider.when('/delete/:idEntidadBancaria', {
             templateUrl: "delete.html",
-            controller: "deleteController"
+            controller: "DeleteController"
         });
 
 
         $routeProvider.when('/update/:idEntidadBancaria', {
             templateUrl: "update.html",
-            controller: "updateController"
+            controller: "UpdateController"
         });
 
         $routeProvider.otherwise({

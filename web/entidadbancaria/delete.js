@@ -1,6 +1,5 @@
-app.controller("deleteController", deleteController);
-deleteController.Sinject = ['$scope', '$routeParams', 'entidadBancariaService'];
-function deleteController($scope, $routeParams, entidadBancariaService) {
+DeleteController.$inject = ['$scope', '$routeParams', 'entidadBancariaService'];
+function DeleteController($scope, $routeParams, entidadBancariaService) {
     $scope.identidadBancaria = $routeParams.idEntidadBancaria;
     $scope.borrar = function () {
 
@@ -15,3 +14,4 @@ function deleteController($scope, $routeParams, entidadBancariaService) {
         alert("No se ha borrado la entidad bancaria " + $routeParams.idEntidadBancaria);
     }
 }
+app.controller("DeleteController", DeleteController);

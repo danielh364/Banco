@@ -1,6 +1,5 @@
-app.controller("getController", getController);
-getController.Sinject = ['$scope', '$routeParams', 'entidadBancariaService'];
-function getController($scope, $routeParams, entidadBancariaService) {
+GetController.$inject = ['$scope', '$routeParams', 'entidadBancariaService'];
+function GetController($scope, $routeParams, entidadBancariaService) {
 
     var response = entidadBancariaService.get($routeParams.idEntidadBancaria);
 
@@ -8,3 +7,4 @@ function getController($scope, $routeParams, entidadBancariaService) {
         $scope.entidadBancaria = data;
     });
 }
+app.controller("GetController", GetController);

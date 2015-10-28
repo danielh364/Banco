@@ -1,19 +1,19 @@
-app.controller("findController", findController);
-findController.Sinject = ['$scope', '$routeParams', 'entidadBancariaService'];
-function findController($scope, $routeParams, entidadBancariaService) {
+
+FindController.$inject = ['$scope', '$routeParams', 'entidadBancariaService'];
+function FindController($scope, $routeParams, entidadBancariaService) {
     var response;
-    if ($routeParams.nombre == null) {
+    
+    if ($routeParams.nombre === undefined ) {
 
         response = entidadBancariaService.find();
         response.success(function (data, status, headers, config) {
             $scope.entidadesBancarias = data;
         });
-    }
-    else {
-
+    } else {
         response = entidadBancariaService.findByName($routeParams.nombre);
         response.success(function (data, status, headers, config) {
             $scope.entidadesBancarias = data;
         });
     }
 }
+app.controller("FindController", FindController);

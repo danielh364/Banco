@@ -1,6 +1,5 @@
-app.controller("updateController", updateController);
-updateController.Sinject = ['$scope', '$routeParams', 'entidadBancariaService'];
-function updateController($scope, $http, $routeParams, entidadBancariaService) {
+UpdateController.$inject = ['$scope', '$routeParams', 'entidadBancariaService'];
+function UpdateController($scope,$routeParams, entidadBancariaService) {
     $scope.entidadBancaria = {};
     $scope.entidadBancaria.idEntidadBancaria = +$routeParams.idEntidadBancaria
     $scope.actualizar = function () {
@@ -17,3 +16,4 @@ function updateController($scope, $http, $routeParams, entidadBancariaService) {
         });
     }
 }
+app.controller("UpdateController", UpdateController);

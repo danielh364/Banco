@@ -1,10 +1,11 @@
+EntidadBancariaService.$inject = ['$http'];
 function EntidadBancariaService($http) {
 
     this.find = function () {
 
-        var response = $http(config = {
+        var response = $http({
             method: "GET",
-            url: "../../../Banco.api/api/entidadbancaria"
+            url: "../../Banco.api/api/entidadbancaria"
         }
         );
         return response;
@@ -12,9 +13,9 @@ function EntidadBancariaService($http) {
 
     this.findByName = function (nombre) {
 
-        var response = $http(config = {
+        var response = $http({
             method: "GET",
-            url: "../../../Banco.api/api/entidadbancaria?nombre=" + nombre
+            url: "../../Banco.api/api/entidadbancaria?nombre=" + nombre
         });
         return response;
     }
