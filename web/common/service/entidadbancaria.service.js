@@ -9,7 +9,7 @@ function EntidadBancariaService($http) {
         }
         );
         return response;
-    }
+    };
 
     this.findByName = function (nombre) {
 
@@ -18,7 +18,7 @@ function EntidadBancariaService($http) {
             url: "../../Banco.api/api/entidadbancaria?nombre=" + nombre
         });
         return response;
-    }
+    };
 
 
     this.insert = function (entidadBancaria) {
@@ -26,9 +26,9 @@ function EntidadBancariaService($http) {
             method: 'POST',
             url: '../../Banco.api/api/entidadbancaria/',
             data: entidadBancaria
-        })
+        });
         return response;
-    }
+    };
 
 
     this.get = function (idEntidadBancaria) {
@@ -38,16 +38,16 @@ function EntidadBancariaService($http) {
             url: "../../Banco.api/api/entidadbancaria/" + idEntidadBancaria
         });
         return response;
-    }
+    };
 
     this.update = function (idEntidadBancaria, entidadBancaria) {
         var response = $http({
             method: 'PUT',
             url: '../../Banco.api/api/entidadbancaria/' + idEntidadBancaria,
             data: entidadBancaria
-        })
+        });
         return response;
-    }
+    };
 
 
     this.delete = function (idEntidadBancaria) {
@@ -57,6 +57,6 @@ function EntidadBancariaService($http) {
             url: "../../Banco.api/api/entidadbancaria/" + idEntidadBancaria
         });
         return response;
-    }
+    };
 }
 app.service("entidadBancariaService", EntidadBancariaService);
