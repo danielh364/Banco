@@ -1,10 +1,12 @@
 <h1>actualizar datos</h1>
 <form ng-controller="UpdateController">
-    <p>Id Entidad Bancaria: <input  type="text" name="idEntidadBancaria" disabled="{{isDisabled}}" ng-value="{{entidadBancaria.idEntidadBancaria}}"  /></p> 
-    <p>nombre: <input type="text" name="nombre" ng-model="entidadBancaria.nombre"/></p> 
+    <p>Id Entidad Bancaria: <input  type="text" name="idEntidadBancaria" ng-disabled="estado=='UPDATE' || estado=='INSERT' || estado=='VIEW' || estado='DELETE'" ng-value="{{entidadBancaria.idEntidadBancaria}}"  /></p> 
+    <p>nombre: <input type="text" name="nombre" ng-model="entidadBancaria.nombre"  ng-disabled="estado=='VIEW' || estado='DELETE'"/></p> 
     <p>Codigo Entidad: <input type="text" name="codigoEntidad" ng-model="entidadBancaria.codigoEntidad"/></p>
     <p>Fecha de creacion: <input type="text" name="fechaCreacion" ng-model="entidadBancaria.fechaCreacion"/></p>
     <p>Direccion: <input type="text" name="direccion" ng-model="entidadBancaria.direccion"/></p>
     <p>CIF: <input type="text" name="cif" ng-model="entidadBancaria.cif"/></p>
     <input ng-click="actualizar()" type="submit" value="Actualizar"/><input type="reset"/><br><br>
 </form>
+<br></br>
+ <a href="#/" > <button>Volver</button></a>

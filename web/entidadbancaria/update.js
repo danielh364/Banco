@@ -2,6 +2,7 @@ UpdateController.$inject = ['$scope', '$routeParams', 'entidadBancariaService'];
 function UpdateController($scope,$routeParams, entidadBancariaService) {
     $scope.entidadBancaria = {};
     $scope.entidadBancaria.idEntidadBancaria = +$routeParams.idEntidadBancaria;
+    $scope.estado="UPDATE";
     $scope.actualizar = function () {
 
         var response = entidadBancariaService.update($scope.entidadBancaria.idEntidadBancaria, $scope.entidadBancaria);
