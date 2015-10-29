@@ -1,6 +1,7 @@
 GetController.$inject = ['$scope', '$routeParams', 'entidadBancariaService'];
 function GetController($scope, $routeParams, entidadBancariaService) {
-
+$scope.entidadBancaria = {};
+$scope.entidadBancaria .idEntidadBancaria=$routeParams.idEntidadBancaria;
     var response = entidadBancariaService.get($routeParams.idEntidadBancaria);
     $scope.estado = "VIEW";
 

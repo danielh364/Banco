@@ -1,5 +1,6 @@
 DeleteController.$inject = ['$scope', '$routeParams', 'entidadBancariaService'];
 function DeleteController($scope, $routeParams, entidadBancariaService) {
+    $scope.entidadBancaria = {};
     $scope.identidadBancaria = $routeParams.idEntidadBancaria;
     $scope.estado = "DELETE";
     $scope.ok = function () {
