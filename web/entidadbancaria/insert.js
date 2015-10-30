@@ -3,6 +3,7 @@ function InsertController($scope, entidadBancariaService) {
 
     $scope.entidadBancaria = {};
     $scope.estado = "INSERT";
+    $scope.valorboton="Insertar";
     $scope.ok = function () {
 
         var response = entidadBancariaService.insert($scope.entidadBancaria);

@@ -3,6 +3,7 @@ function DeleteController($scope, $routeParams, entidadBancariaService) {
     $scope.entidadBancaria = {};
     $scope.identidadBancaria = $routeParams.idEntidadBancaria;
     $scope.estado = "DELETE";
+    $scope.valorboton="Borrar";
     $scope.ok = function () {
 
         var response = entidadBancariaService.delete($routeParams.idEntidadBancaria);
