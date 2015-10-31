@@ -1,15 +1,25 @@
-DeleteController.$inject = ['$scope', '$routeParams', 'entidadBancariaService'];
-function DeleteController($scope, $routeParams, entidadBancariaService) {
+DeleteController.$inject = ['$scope', '$routeParams', 'entidadBancariaService', '$location'];
+function DeleteController($scope, $routeParams, entidadBancariaService, $location) {
     $scope.entidadBancaria = {};
-    $scope.identidadBancaria = $routeParams.idEntidadBancaria;
+
+    $scope.entidadBancaria.idEntidadBancaria = $routeParams.idEntidadBancaria;
+    var response = entidadBancariaService.get($routeParams.idEntidadBancaria);
     $scope.estado = "DELETE";
-    $scope.valorboton="Borrar";
+    $scope.valorboton = "Borrar";
+
+    response.success(function (data, status, headers, config) {
+        $scope.entidadBancaria = data;
+    });
+
+    response.error(function (data, status, headers, config) {
+        alert("Ha fallado la petición. Estado HTTP:" + status);
+    });
     $scope.ok = function () {
 
         var response = entidadBancariaService.delete($routeParams.idEntidadBancaria);
 
         response.success(function (data, status, headers, config) {
-            alert("se ha borrado Correctamente");
+            alert("BORRADO CON ÉXITO");
 
         });
 
@@ -18,7 +28,7 @@ function DeleteController($scope, $routeParams, entidadBancariaService) {
         });
     };
     $scope.cancel = function () {
-        alert("No se ha borrado la entidad bancaria " + $routeParams.idEntidadBancaria);
+        $location.url('/find/');
     };
 }
 app.controller("DeleteController", DeleteController);

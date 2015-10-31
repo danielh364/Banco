@@ -1,9 +1,9 @@
-InsertController.$inject = ['$scope', 'entidadBancariaService'];
-function InsertController($scope, entidadBancariaService) {
+InsertController.$inject = ['$scope', 'entidadBancariaService', '$location'];
+function InsertController($scope, entidadBancariaService, $location) {
 
     $scope.entidadBancaria = {};
     $scope.estado = "INSERT";
-    $scope.valorboton="Insertar";
+    $scope.valorboton = "Insertar";
     $scope.ok = function () {
 
         var response = entidadBancariaService.insert($scope.entidadBancaria);
@@ -17,6 +17,8 @@ function InsertController($scope, entidadBancariaService) {
             console.log(data);
         });
     };
-     $scope.cancel = function () {}
+    $scope.cancel = function () {
+        $location.url('/');
+    }
 }
 app.controller("InsertController", InsertController);

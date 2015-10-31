@@ -1,5 +1,5 @@
-GetController.$inject = ['$scope', '$routeParams', 'entidadBancariaService'];
-function GetController($scope, $routeParams, entidadBancariaService) {
+GetController.$inject = ['$scope', '$routeParams', 'entidadBancariaService', '$location'];
+function GetController($scope, $routeParams, entidadBancariaService, $location) {
     $scope.entidadBancaria = {};
     $scope.entidadBancaria.idEntidadBancaria = $routeParams.idEntidadBancaria;
     var response = entidadBancariaService.get($routeParams.idEntidadBancaria);
@@ -15,10 +15,11 @@ function GetController($scope, $routeParams, entidadBancariaService) {
     });
 
     $scope.ok = function () {
-
+  $location.url('/find/');
     };
 
     $scope.cancel = function () {
-};
+        $location.url('/');
+    };
 }
 app.controller("GetController", GetController);
