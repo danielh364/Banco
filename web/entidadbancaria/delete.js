@@ -14,6 +14,7 @@ function DeleteController($scope, $routeParams, entidadBancariaService, $locatio
     response.error(function (data, status, headers, config) {
         alert("Ha fallado la petición. Estado HTTP:" + status);
     });
+    
     $scope.ok = function () {
 
         var response = entidadBancariaService.delete($routeParams.idEntidadBancaria);
