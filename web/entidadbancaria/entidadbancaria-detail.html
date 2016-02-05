@@ -8,4 +8,7 @@
     <p>CIF: <input type="text" name="cif" ng-model="entidadBancaria.cif" ng-disabled=" (estado==='VIEW') || (estado==='DELETE')"/></p>
     <input ng-click="ok()" type="submit" ng-value="valorboton" /><input ng-click="cancel()" type="submit" value="cancel"/><br><br>
 </form>
+  <div id="errores">
+            <div  class="alert alert-danger" ng-repeat="businessMessage in businessMessages"><span class="glyphicon glyphicon-exclamation-sign"></span> {{businessMessage.fieldName}}: {{businessMessage.mensaje}}</div>
+        </div>
 <br />
