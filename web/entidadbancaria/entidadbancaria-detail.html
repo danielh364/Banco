@@ -12,3 +12,32 @@
             <div  class="alert alert-danger" ng-repeat="businessMessage in businessMessages"><span class="glyphicon glyphicon-exclamation-sign"></span> {{businessMessage.fieldName}}: {{businessMessage.mensaje}}</div>
         </div>
 <br />
+
+<div >
+    <div ng-hide="(estado === 'INSERT')">
+        <h1> Sucursales Asociadas</h1>
+        <table>
+            <thead>
+                <tr class="success">
+                    <th>Sucursal</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Código Entidad</th>
+                    <th>Fecha Creación</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="sucursalBancaria in sucursalesBancarias" >
+                    <td> {{sucursalBancaria.codigoSucursalBancaria}} </td>
+                    <td> {{sucursalBancaria.direccion}}</td>
+                    <td> {{sucursalBancaria.telefono}}</td>
+                    <td> {{sucursalBancaria.entidadBancaria.codigoEntidad}}</td>
+                        <td> {{sucursalBancaria.fechaCreacion| date:'dd/MMMM/yyyy'}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    </div>
+

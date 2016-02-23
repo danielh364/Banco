@@ -58,5 +58,7 @@ function EntidadBancariaService($http) {
         });
         return response;
     };
+    
+
 }
 app.service("entidadBancariaService", EntidadBancariaService);
